@@ -1,0 +1,70 @@
+!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+    .center{
+        position: absolute;
+        right: 25%;
+        top: 10%;
+        width: 950px;
+        height: 400px;
+     
+    }
+    .media{
+        margin-bottom: 50px;
+        display: flex;
+        width: 100%;
+        justify-content: space-around;
+        
+    }
+    #fb, #twit, #ig, #linkedin, #github{
+        font-size: 50px;
+        text-decoration: none;
+        color: white;
+    }
+    .button{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    
+    .buttonn{
+        border: 2px solid transparent;
+        border-color: none;
+        border-radius: 10px;
+        width: 200px;
+        height: 60px;
+        font-size: 30px;
+        font-weight: bolder;
+        color: darkblue;
+        text-decoration: none;
+    }
+    .buttonn:hover{
+        cursor: pointer;
+    }
+</style>
+<body style="background-color: darkblue;">
+    <div style="color: white;" class="center">
+        <div style="color: rgb(255, 255, 255);"><h1 style="font-size: 150px; margin-bottom: 20px; text-align: center;">Welcome</h1></div>
+        <div class="media">
+            <div><a id="fb" href="https://www.facebook.com/"><i  class="fa fa-facebook-square" aria-hidden="true"></i></a></div>
+            <div><a id="twit" href="https://twitter.com"><i  class="fa fa-twitter" aria-hidden="true"></i></a></div>
+            <div><a id="ig" href="https://www.instagram.com/"><i  class="fa fa-instagram" aria-hidden="true"></i></a></div>
+            <div><a id="linkedin" href="https://www.linkedin.com/"><i  class="fa fa-linkedin-square" aria-hidden="true"></i></a></div>
+            <div><a id='github' href="https://github.com/menkeler"><i  class="fa fa-github" aria-hidden="true"></i></a></div>
+        </div>
+        <div class="button"><a href="Test.html"><button class="buttonn">join</button></a></div>
+    </div>
+</body>
+</html>

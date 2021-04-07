@@ -1,0 +1,335 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+     
+      
+    </style>
+  </head>
+
+<body>
+
+
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">
+        <img src="burger.png" width="30" height="30" class="d-inline-block align-top" alt="">
+        do.Lab.com
+    </a>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Features</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <!-- ADDD MODAL -->
+  <div class="container">
+    
+    <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Add</button>
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">NewOrder</h4>
+          </div>
+          <div class="modal-body">
+            <div class="modal-body">
+            <table>
+              <tbody>
+                <tr>
+                  <td colspan="3"><input type="text" size="98" id = "order"></td>
+                </tr>
+                <tr>
+                  <td colspan="3"><input type="text" size="98" id ="buyer"></td>
+                </tr>
+              </tbody>
+            </table>
+              <table>
+                  <thead> 
+                    <tr>
+                      <th>Items</th>
+                    </tr> 
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <select id="foods" name="foods"></select>
+                       </td>
+                        <td>
+                          <input type="number" name="price" id="price" step="1" onchange="update(this)">
+                        </td>
+                        <td>
+                          <input type="number" name="quantity" id="quantity" step="1" onchange="update(this)">
+                        </td>
+                        <td>
+                          <output type="number" name="total" id="total">
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select id="foods" name="foods"></select>
+                       </td>
+                        <td>
+                          <input type="number" name="price" id="price" step="1" onchange="update(this)">
+                        </td>
+                        <td>
+                          <input type="number" name="quantity" id="quantity" step="1" onchange="update(this)">
+                        </td>
+                        <td>
+                          <output type="number" name="total" id="total">
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select id="foods" name="foods"></select>
+                       </td>
+                        <td>
+                          <input type="number" name="price" id="price" step="1" onchange="update(this)">
+                        </td>
+                        <td>
+                          <input type="number" name="quantity" id="quantity" step="1" onchange="update(this)">
+                        </td>
+                        <td>
+                          <output type="number" name="total" id="total">
+                        </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <select id="foods" name="foods"></select>
+                       </td>
+                        <td>
+                          <input type="number" name="price" id="price" step="1" onchange="update(this)">
+                        </td>
+                        <td>
+                          <input type="number" name="quantity" id="quantity" step="1" onchange="update(this)">
+                        </td>
+                        <td>
+                          <output type="number" name="total" id="total">
+                        </td>
+                    </tr>
+
+                  </tbody>
+              </table>
+  
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            <button id ="save" type="button" class="btn btn-default" data-dismiss="modal" onclick="Saving();">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <!-- Trigger the modal with a button -->
+    
+    <!-- Modal -->
+    <div class="modal fade" id="myModalz" role="dialog">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+            <h4 class="modal-title">View</h4>
+          </div>
+          <div class="modal-body">
+            <div class="modal-body">
+            <table>
+              <thead id = "viewModal">
+                <tr id= "modalOrder">
+                  <td colspan="3"><input type="text" size="98" id = "orderNumView"  value= "test "readonly ></td>
+                </tr>
+                <tr id = "modalBuyer">
+                  <td colspan="3"><input type="text" size="98" id = "BuyerView"  value= "test "readonly ></td>
+                </tr>
+                <tr>
+                  <td>Items</td>
+                </tr>
+              </thead>       
+            </table>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <table  class="table">
+    <thead class="thead-dark" id ="tlist">
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Order</th>
+        <th scope="col">Name</th>
+        <th scope="col">Total</th>
+        <th scope="col">View</th>
+      </tr>
+    </thead>
+  </table>
+  
+  <script type="text/javascript">
+    //Variables
+    const select = document.getElementsByName("foods");
+    const request = 'https://www.themealdb.com/api/json/v1/1/filter.php?a=Canadian'
+    const Price = document.getElementsByName("price");
+    const Quantity = document.getElementsByName("quantity");
+    const Total = document.getElementsByName("total");
+    const Save = document.getElementById("save"); 
+    const Buyer = document.getElementById("buyer");
+    const Order = document.getElementById("order");
+    const Links =[];
+    //get Data From API
+    const getUserData = async () => {
+    const response = await fetch(request)
+    const data = response.json()
+        return data;
+    }
+    //Data
+     getUserData()
+     .then((data) => {
+         console.log(data)
+          for(selects of select){
+              for(user of data.meals){
+                //Fill in Dropdown
+                  var option = document.createElement('option'); 
+                  option.text = user.strMeal;
+                  selects.add(option, 0);  
+              }       
+          }
+          for(img of data.meals){
+            Links.push(img.strMealThumb);
+          }
+        Links.reverse()
+        loadTable();
+     }) 
+     .catch((err) => console.log(err))
+
+      //Refresh Total Every Change 
+      function update() {
+        for(let i = 0; i < 4 ; i++)
+           Total[i].innerHTML = Quantity[i].value * Price[i].value;
+      }
+      
+      // Save 
+      var Customers = {
+        People : []
+      }
+      let Customer= {
+                  "orderNumber":"",
+                  "orderBuyer":"",
+                  "items":[],
+                  "total":0
+      };
+      
+      var myStorage = window.localStorage;
+      var subTotalx = 0;
+
+      var object_list = myStorage.getItem('object_list')
+      
+  //save item 
+      function Saving(){
+        Customer['orderNumber'] = Order.value
+        Customer['orderBuyer'] = Buyer.value
+        Customer["items"].pop()
+        for(let i = 0; i < 4; i++){
+          
+          var item = {}
+          Total[i] = Quantity[i].value * Price[i].value;
+          subTotalx += Quantity[i].value * Price[i].value;
+          if(Total[i].value == 0){
+            break
+          }else{
+            item = {
+              'name': select[i].value,
+              'price' : Price[i].value,
+              'qty': Quantity[i].value,
+              'subtotal' : Total[i].value,
+              'image' : Links[select[i].selectedIndex]
+            }
+            Customer["items"].push(item)
+          }
+          Customer["total"] = subTotalx;
+          
+        }
+        Customers["People"].push(Customer)
+
+        if(object_list == null){ //CHECK IF LOCALSTORAGE IS EMPTY
+        myStorage.setItem("object_list", JSON.stringify(Customers))//SAVE TO LOCAL STORAGE WITH UPDATED DATA
+        }
+        else{
+            var objectarray =  JSON.parse(object_list);
+            objectarray["People"].push(Customer)
+            myStorage.setItem('object_list', JSON.stringify(objectarray))// CREATES 'CUSTOMERS' KEY WITH CUSTOMERS
+        }
+        location.reload();
+      }
+
+      //load table
+      function loadTable(){
+        var table = document.getElementById("tlist");
+            if(object_list != null){
+              var objectarray =  JSON.parse(object_list);
+                for(index = 0; index < objectarray["People"].length;index++){
+                  var row = table.insertRow();
+                  var col0  = row.insertCell();
+                  var col1  = row.insertCell();
+                  var col2  = row.insertCell();
+                  var col3  = row.insertCell();
+                  var col4  = row.insertCell();
+                  col0.innerHTML =  index;
+                  col1.innerHTML =objectarray["People"][index].orderNumber;
+                  col2.innerHTML = objectarray["People"][index].orderBuyer;
+                  col3.innerHTML = "$"+objectarray["People"][index].total;
+                  col4.innerHTML = '<a data-toggle="modal" href="#myModalz">View</a>';
+                  console.log()
+                }
+            } 
+            
+      }
+      //fill modal of each item
+      var tablez = document.getElementById("viewModal");
+            
+            if(object_list != null){
+              var objectarray =  JSON.parse(object_list);
+              var row1 = tablez.insertRow();
+              var row2 = tablez.insertRow();
+              var row3 = tablez.insertRow();
+                for(index = 0; index < objectarray["People"].length;index++){
+                   document.getElementById("orderNumView").value = objectarray["People"][index].orderNumber;
+                   document.getElementById("BuyerView").value = objectarray["People"][index].orderBuyer;
+                
+                  for(i = 0; i < objectarray["People"][index].items.length; i++){
+                    var col1  = row2.insertCell();
+                    var col2 = row3.insertCell();
+                    var col0  = row1.insertCell();
+                    col0.innerHTML = `<img src="${objectarray["People"][index].items[i].image}" style="width:100px;height:100px;">`
+                    col0.innerHTML = `<img src="${objectarray["People"][index].items[i].image}" style="width:100px;height:100px;">`
+                    col1.innerHTML = "$"+objectarray["People"][index].items[i].price;
+                    col2.innerHTML = "Pieces: " + objectarray["People"][index].items[i].qty; 
+                  }
+                }   
+            } 
+    
+      
+          
+      
+
+ </script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
