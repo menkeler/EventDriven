@@ -1,20 +1,19 @@
 
-        h1 {
-            color: green;
-        }
-        p{
-            font-size:  20px;
-        }
 
-        td{
-            text-align: center;
-            border: black;
-            padding: 10px;
-        }
-        thead tr td{
-            font-weight: bold;
-            color: blue;
-        }
-        .head2{
-            color: red;
-        }
+ table{
+   width: 800px;
+   height: 600px;
+}
+#title{
+   border-bottom: 1px solid black;
+   font-size: larger;
+}
+.body-color{
+   background-color: lightcoral;
+}
+td{
+   border: 1px solid black;
+   width: 80px;
+   height: 80px;
+   text-align: center;
+}
